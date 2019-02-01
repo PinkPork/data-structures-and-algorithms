@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023226532203434C00843E4A /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023226522203434C00843E4A /* Node.swift */; };
+		023226552203438700843E4A /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023226542203438700843E4A /* LinkedList.swift */; };
+		02322658220343E900843E4A /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02322657220343E900843E4A /* LinkedListTests.swift */; };
 		0256384920BEFE430070FF67 /* Data_Structures_and_Algorithms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0256383F20BEFE420070FF67 /* Data_Structures_and_Algorithms.framework */; };
 		0256384E20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256384D20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift */; };
 		0256385020BEFE430070FF67 /* Data_Structures_and_Algorithms.h in Headers */ = {isa = PBXBuildFile; fileRef = 0256384220BEFE420070FF67 /* Data_Structures_and_Algorithms.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +26,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		023226522203434C00843E4A /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		023226542203438700843E4A /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		02322657220343E900843E4A /* LinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
 		0256383F20BEFE420070FF67 /* Data_Structures_and_Algorithms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data_Structures_and_Algorithms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0256384220BEFE420070FF67 /* Data_Structures_and_Algorithms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data_Structures_and_Algorithms.h; sourceTree = "<group>"; };
 		0256384320BEFE420070FF67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +56,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0232264F2203430100843E4A /* LinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				023226522203434C00843E4A /* Node.swift */,
+				023226542203438700843E4A /* LinkedList.swift */,
+			);
+			path = LinkedList;
+			sourceTree = "<group>";
+		};
+		02322656220343D200843E4A /* LinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				02322657220343E900843E4A /* LinkedListTests.swift */,
+			);
+			path = LinkedList;
+			sourceTree = "<group>";
+		};
 		0256383520BEFE420070FF67 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +94,7 @@
 		0256384120BEFE420070FF67 /* Data Structures and Algorithms */ = {
 			isa = PBXGroup;
 			children = (
+				0232264F2203430100843E4A /* LinkedList */,
 				0256384220BEFE420070FF67 /* Data_Structures_and_Algorithms.h */,
 				0256384320BEFE420070FF67 /* Info.plist */,
 			);
@@ -80,6 +104,7 @@
 		0256384C20BEFE430070FF67 /* Data Structures and AlgorithmsTests */ = {
 			isa = PBXGroup;
 			children = (
+				02322656220343D200843E4A /* LinkedList */,
 				0256384D20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift */,
 				0256384F20BEFE430070FF67 /* Info.plist */,
 			);
@@ -148,6 +173,7 @@
 				TargetAttributes = {
 					0256383E20BEFE420070FF67 = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 1010;
 					};
 					0256384720BEFE430070FF67 = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -194,6 +220,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				023226552203438700843E4A /* LinkedList.swift in Sources */,
+				023226532203434C00843E4A /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02322658220343E900843E4A /* LinkedListTests.swift in Sources */,
 				0256384E20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +368,7 @@
 		0256385420BEFE430070FF67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -355,6 +385,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "JLainoG.Data-Structures-and-Algorithms";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,6 +394,7 @@
 		0256385520BEFE430070FF67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -387,6 +419,7 @@
 		0256385720BEFE430070FF67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Data Structures and AlgorithmsTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -404,6 +437,7 @@
 		0256385820BEFE430070FF67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Data Structures and AlgorithmsTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
