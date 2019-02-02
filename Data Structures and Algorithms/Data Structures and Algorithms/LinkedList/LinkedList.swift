@@ -160,6 +160,15 @@ extension LinkedList: CustomStringConvertible {
     }
 }
 
+extension LinkedList: ExpressibleByArrayLiteral {
+    public typealias ArrayLiteralElement = Value
+    
+    public init(arrayLiteral elements: Value...) {
+        self.init()
+        elements.forEach { append($0) }
+    }
+}
+
 extension LinkedList: Collection {
     public struct Index: Comparable {
         var node: Node<Value>?

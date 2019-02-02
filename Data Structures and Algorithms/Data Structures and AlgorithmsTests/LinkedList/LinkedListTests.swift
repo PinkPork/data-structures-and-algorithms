@@ -57,10 +57,7 @@ class LinkedListTests: XCTestCase {
     
     func testNodeAt() {
         // Given
-        var list = LinkedList<Int>()
-        list.append(1)
-        list.append(2)
-        list.append(3)
+        var list: LinkedList<Int> = [1,2,3]
         
         // When
         guard let node0 = list.node(at: 0) else {
@@ -76,10 +73,7 @@ class LinkedListTests: XCTestCase {
     
     func testInsert() {
         // Given
-        var list = LinkedList<Int>()
-        list.append(1)
-        list.append(2)
-        list.append(4)
+        var list: LinkedList<Int> = [1,2,4]
         
         // When
         guard let node1 = list.node(at: 1) else {
@@ -96,10 +90,7 @@ class LinkedListTests: XCTestCase {
     
     func testInsertAfterTail() {
         // Given
-        var list = LinkedList<Int>()
-        list.append(1)
-        list.append(2)
-        list.append(3)
+        var list: LinkedList<Int> = [1,2,3]
         
         // When
         guard let node2 = list.node(at: 2) else {
@@ -117,10 +108,7 @@ class LinkedListTests: XCTestCase {
     
     func testInsertAfterHead() {
         // Given
-        var list = LinkedList<Int>()
-        list.append(1)
-        list.append(3)
-        list.append(4)
+        var list: LinkedList<Int> = [1,3,4]
         
         // When
         guard let node0 = list.node(at: 0) else {
@@ -139,14 +127,7 @@ class LinkedListTests: XCTestCase {
     
     func testInsertAfter() {
         // Given
-        var list = LinkedList<Int>()
-        list.append(1)
-        list.append(1)
-        list.append(1)
-        list.append(1)
-        list.append(1)
-        list.append(3)
-        list.append(4)
+        var list: LinkedList<Int> = [1,1,1,1,1,3,4]
         
         // When
         guard let node0 = list.node(at: 4) else {
@@ -165,10 +146,7 @@ class LinkedListTests: XCTestCase {
     
     func testPop() {
         // Given
-        var list = LinkedList<Int>()
-        list.append(1)
-        list.append(2)
-        list.append(3)
+        var list: LinkedList<Int> = [1,2,3]
         
         // When
         let value = list.pop()
@@ -195,10 +173,7 @@ class LinkedListTests: XCTestCase {
     
     func testRemoveLast() {
         // Given
-        var list = LinkedList<Int>()
-        list.append(1)
-        list.append(2)
-        list.append(3)
+        var list: LinkedList<Int> = [1,2,3]
         
         // When
         let value = list.removeLast()
@@ -240,10 +215,7 @@ class LinkedListTests: XCTestCase {
     
     func testRemoveAfter() {
         // Given
-        var list = LinkedList<Int>()
-        list.append(1)
-        list.append(2)
-        list.append(3)
+        var list: LinkedList<Int> = [1,2,3]
         
         // When
         guard let node0 = list.node(at: 0) else {
@@ -261,10 +233,7 @@ class LinkedListTests: XCTestCase {
 
     func testRemoveAfterNodeBeforeTail() {
         // Given
-        var list = LinkedList<Int>()
-        list.append(1)
-        list.append(2)
-        list.append(3)
+        var list: LinkedList<Int> = [1,2,3]
         
         // When
         guard let node1 = list.node(at: 1) else {
@@ -339,9 +308,7 @@ class LinkedListTests: XCTestCase {
     
     func testLinkedListCopyOnWriteAppend() {
         // Given
-        var list = LinkedList<Int>()
-        list.append(1)
-        list.append(2)
+        var list: LinkedList<Int> = [1,2]
         
         // When
         var otherList = list
@@ -354,9 +321,7 @@ class LinkedListTests: XCTestCase {
     
     func testLinkedListCopyOnWriteInsert() {
         // Given
-        var list = LinkedList<Int>()
-        list.append(1)
-        list.append(3)
+        var list: LinkedList<Int> = [1,3]
         
         // When
         var otherList = list
