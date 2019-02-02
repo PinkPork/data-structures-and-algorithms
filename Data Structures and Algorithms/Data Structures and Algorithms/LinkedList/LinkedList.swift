@@ -60,17 +60,17 @@ public struct LinkedList<Value> {
     
     @discardableResult
     public mutating func insert(_ value: Value, after node: Node<Value>) -> Node<Value> {
-        copyNodes()
-        
         guard tail !== node else {
             append(value)
             return tail!
         }
-        let node = Node(value: value, next: node.next)
+        let newReferenceNode = copyNodes(referencedNode: node)
+        let newNode = newReferenceNode ?? node
+        let insertedNode = Node(value: value, next: newNode.next)
         
-        node.next = node
+        newNode.next = insertedNode
         count += 1
-        return node
+        return insertedNode
     }
     
     @discardableResult
@@ -112,34 +112,52 @@ public struct LinkedList<Value> {
     @discardableResult
     public mutating func remove(after node: Node<Value>) -> Value? {
         defer {
-            if node.next === tail {
-                tail = node
+            let newReferenceNode = copyNodes(referencedNode: node)
+            let newNode = newReferenceNode ?? node
+            
+            if newNode.next === tail {
+                tail = newNode
             }
-            node.next = node.next?.next
+            
+            newNode.next = newNode.next?.next
             count -= 1
         }
-        copyNodes()
         return node.next?.value
     }
     
-    private mutating func copyNodes() {
+    @discardableResult
+    private mutating func copyNodes(referencedNode: Node<Value>? = nil) -> Node<Value>? {
         guard !isKnownUniquelyReferenced(&head),
             var oldNode = head else {
-            return
+            return nil
         }
         
+        var copiedReferencedNode: Node<Value>?
         var newNode: Node<Value>?
         
         head = Node(value: oldNode.value)
         newNode = head
         
+        if oldNode === referencedNode {
+            copiedReferencedNode = newNode
+        }
+        
         while let nextOldNode = oldNode.next {
             newNode?.next = Node(value: nextOldNode.value)
             newNode = newNode?.next
             oldNode = nextOldNode
+            
+            if nextOldNode === referencedNode {
+                copiedReferencedNode = newNode
+            }
+        }
+        
+        if tail === referencedNode {
+            copiedReferencedNode = newNode
         }
         
         tail = newNode
+        return copiedReferencedNode
     }
 }
 
