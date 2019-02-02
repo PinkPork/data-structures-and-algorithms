@@ -9,13 +9,16 @@
 public struct LinkedList<Value> {
     public var head: Node<Value>?
     public var tail: Node<Value>?
+    public var count: Int = 0
+    public var isEmpty: Bool { return head == nil }
     
     public init() {}
-
-    public var isEmpty: Bool {
-        return head == nil
-    }
     
+    public init(array: [Value]) {
+        self.init()
+        array.forEach { append($0) }
+    }
+
     public mutating func push(_ value: Value) {
         let node = Node(value: value, next: head)
         
@@ -24,6 +27,8 @@ public struct LinkedList<Value> {
         if tail == nil {
             tail = head
         }
+        
+        count += 1
     }
     
     public mutating func append(_ value: Value) {
@@ -38,6 +43,7 @@ public struct LinkedList<Value> {
         
         tail.next = node
         self.tail = node
+        count += 1
     }
     
     public func node(at index: Int) -> Node<Value>? {
@@ -63,6 +69,7 @@ public struct LinkedList<Value> {
         let node = Node(value: value, next: node.next)
         
         node.next = node
+        count += 1
         return node
     }
     
@@ -70,6 +77,7 @@ public struct LinkedList<Value> {
     public mutating func pop() -> Value? {
         defer {
             head = head?.next
+            count -= 1
             
             if isEmpty {
                 tail = nil
@@ -97,6 +105,7 @@ public struct LinkedList<Value> {
         
         tail = prev
         tail?.next = nil
+        count -= 1
         return current?.value
     }
     
@@ -107,6 +116,7 @@ public struct LinkedList<Value> {
                 tail = node
             }
             node.next = node.next?.next
+            count -= 1
         }
         copyNodes()
         return node.next?.value
@@ -139,6 +149,15 @@ extension LinkedList: CustomStringConvertible {
             return "Empty List"
         }
         return String(describing: head)
+    }
+}
+
+extension LinkedList: ExpressibleByArrayLiteral {
+    public typealias ArrayLiteralElement = Value
+    
+    public init(arrayLiteral elements: LinkedList.ArrayLiteralElement...) {
+        self.init()
+        elements.forEach { append($0) }
     }
 }
 
