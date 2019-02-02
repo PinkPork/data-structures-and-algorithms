@@ -131,7 +131,35 @@ class LinkedListTests: XCTestCase {
         
         // Then
         XCTAssertEqual(insertedNode.value, 2)
+        XCTAssertEqual(insertedNode.next?.value, 3)
         XCTAssertEqual(list.head?.value, 1)
+        XCTAssertEqual(list.head?.next?.value, 2)
+        XCTAssertEqual(list.tail?.value, 4)
+    }
+    
+    func testInsertAfter() {
+        // Given
+        var list = LinkedList<Int>()
+        list.append(1)
+        list.append(1)
+        list.append(1)
+        list.append(1)
+        list.append(1)
+        list.append(3)
+        list.append(4)
+        
+        // When
+        guard let node0 = list.node(at: 4) else {
+            XCTFail("Node at Index 0 should exist")
+            return
+        }
+        let insertedNode = list.insert(2, after: node0)
+        
+        // Then
+        XCTAssertEqual(insertedNode.value, 2)
+        XCTAssertEqual(insertedNode.next?.value, 3)
+        XCTAssertEqual(list.head?.value, 1)
+        XCTAssertEqual(list.head?.next?.value, 1)
         XCTAssertEqual(list.tail?.value, 4)
     }
     
@@ -183,9 +211,7 @@ class LinkedListTests: XCTestCase {
     
     func testRemoveLastUntilEmpty() {
         // Given
-        var list = LinkedList<Int>()
-        list.append(1)
-        list.append(2)
+        var list: LinkedList<Int> = [1, 2]
         
         // When
         _ = list.removeLast()
@@ -193,6 +219,21 @@ class LinkedListTests: XCTestCase {
         
         // Then
         XCTAssertEqual(value, 1)
+        XCTAssertNil(list.head)
+        XCTAssertNil(list.tail)
+    }
+    
+    func testRemoveAfterUntilEmpty() {
+        // Given
+        var list: LinkedList<Int> = [1,2,3,4,5]
+        
+        // When
+        while list.head !== list.tail {
+            list.remove(after: list.head!)
+        }
+        list.pop()
+        
+        // Then
         XCTAssertNil(list.head)
         XCTAssertNil(list.tail)
     }
@@ -214,6 +255,7 @@ class LinkedListTests: XCTestCase {
         // Then
         XCTAssertEqual(value, 2)
         XCTAssertEqual(list.head?.value, 1)
+        XCTAssert(list.head?.next === list.tail)
         XCTAssertEqual(list.tail?.value, 3)
     }
 
@@ -295,7 +337,7 @@ class LinkedListTests: XCTestCase {
         XCTAssertEqual(sumAllValues, 45)
     }
     
-    func testLinkedListCopyOnWrite() {
+    func testLinkedListCopyOnWriteAppend() {
         // Given
         var list = LinkedList<Int>()
         list.append(1)
@@ -304,6 +346,21 @@ class LinkedListTests: XCTestCase {
         // When
         var otherList = list
         otherList.append(3)
+        
+        // Then
+        XCTAssertTrue(isKnownUniquelyReferenced(&list.head))
+        XCTAssertNotEqual(list.description, otherList.description)
+    }
+    
+    func testLinkedListCopyOnWriteInsert() {
+        // Given
+        var list = LinkedList<Int>()
+        list.append(1)
+        list.append(3)
+        
+        // When
+        var otherList = list
+        otherList.insert(2, after: otherList.node(at: 0)!)
         
         // Then
         XCTAssertTrue(isKnownUniquelyReferenced(&list.head))
