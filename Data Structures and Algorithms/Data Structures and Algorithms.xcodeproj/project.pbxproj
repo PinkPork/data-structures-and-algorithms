@@ -13,6 +13,9 @@
 		0256384920BEFE430070FF67 /* Data_Structures_and_Algorithms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0256383F20BEFE420070FF67 /* Data_Structures_and_Algorithms.framework */; };
 		0256384E20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256384D20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift */; };
 		0256385020BEFE430070FF67 /* Data_Structures_and_Algorithms.h in Headers */ = {isa = PBXBuildFile; fileRef = 0256384220BEFE420070FF67 /* Data_Structures_and_Algorithms.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02758BA122068FB50033D8E5 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02758BA022068FB50033D8E5 /* StackTests.swift */; };
+		02758BA32206910E0033D8E5 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02758BA22206910E0033D8E5 /* Stack.swift */; };
+		02758BA5220697AB0033D8E5 /* StackChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02758BA4220697AB0033D8E5 /* StackChallengeTests.swift */; };
 		02E34E4422047E7000A7B922 /* LinkedListChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E34E4322047E7000A7B922 /* LinkedListChallengeTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +39,9 @@
 		0256384820BEFE430070FF67 /* Data Structures and AlgorithmsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Data Structures and AlgorithmsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0256384D20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data_Structures_and_AlgorithmsTests.swift; sourceTree = "<group>"; };
 		0256384F20BEFE430070FF67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02758BA022068FB50033D8E5 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
+		02758BA22206910E0033D8E5 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		02758BA4220697AB0033D8E5 /* StackChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackChallengeTests.swift; sourceTree = "<group>"; };
 		02E34E4322047E7000A7B922 /* LinkedListChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListChallengeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +103,7 @@
 		0256384120BEFE420070FF67 /* Data Structures and Algorithms */ = {
 			isa = PBXGroup;
 			children = (
+				02758B9E22068F8C0033D8E5 /* Stack */,
 				0232264F2203430100843E4A /* LinkedList */,
 				0256384220BEFE420070FF67 /* Data_Structures_and_Algorithms.h */,
 				0256384320BEFE420070FF67 /* Info.plist */,
@@ -107,11 +114,29 @@
 		0256384C20BEFE430070FF67 /* Data Structures and AlgorithmsTests */ = {
 			isa = PBXGroup;
 			children = (
+				02758B9F22068FA20033D8E5 /* Stack */,
 				02322656220343D200843E4A /* LinkedList */,
 				0256384D20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift */,
 				0256384F20BEFE430070FF67 /* Info.plist */,
 			);
 			path = "Data Structures and AlgorithmsTests";
+			sourceTree = "<group>";
+		};
+		02758B9E22068F8C0033D8E5 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				02758BA22206910E0033D8E5 /* Stack.swift */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		02758B9F22068FA20033D8E5 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				02758BA022068FB50033D8E5 /* StackTests.swift */,
+				02758BA4220697AB0033D8E5 /* StackChallengeTests.swift */,
+			);
+			path = Stack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				023226552203438700843E4A /* LinkedList.swift in Sources */,
+				02758BA32206910E0033D8E5 /* Stack.swift in Sources */,
 				023226532203434C00843E4A /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,7 +258,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02758BA122068FB50033D8E5 /* StackTests.swift in Sources */,
 				02E34E4422047E7000A7B922 /* LinkedListChallengeTests.swift in Sources */,
+				02758BA5220697AB0033D8E5 /* StackChallengeTests.swift in Sources */,
 				02322658220343E900843E4A /* LinkedListTests.swift in Sources */,
 				0256384E20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift in Sources */,
 			);
