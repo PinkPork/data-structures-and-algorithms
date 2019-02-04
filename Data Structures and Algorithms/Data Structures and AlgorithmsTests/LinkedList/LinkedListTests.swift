@@ -57,7 +57,7 @@ class LinkedListTests: XCTestCase {
     
     func testNodeAt() {
         // Given
-        var list: LinkedList<Int> = [1,2,3]
+        let list: LinkedList<Int> = [1,2,3]
         
         // When
         guard let node0 = list.node(at: 0) else {
