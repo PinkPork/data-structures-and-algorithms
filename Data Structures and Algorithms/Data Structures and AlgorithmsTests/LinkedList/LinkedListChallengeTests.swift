@@ -17,10 +17,12 @@ extension LinkedList {
         }
         return description + "nil"
     }
+    
     func middle() -> Node<Value>? {
         let middle = count / 2
         return node(at: middle)
     }
+    
     func reversed() -> LinkedList<Value> {
         let reversedValues: [Value] = reversed()
         return LinkedList<Value>.init(array: reversedValues)
