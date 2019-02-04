@@ -10,6 +10,7 @@ import Foundation
 
 public struct Stack<Element> {
     fileprivate var storage = [Element]()
+    public var root: Element? { return storage.first }
     public var top: Element? { return storage.last }
     public var isEmpty: Bool { return storage.isEmpty }
     public var count: Int { return storage.count }
