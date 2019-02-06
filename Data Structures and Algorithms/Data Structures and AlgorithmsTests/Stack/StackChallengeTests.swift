@@ -15,7 +15,16 @@ class StackChallengeTests: XCTestCase {
     //Given a linked list, print the nodes in reverse order.
     //You should not use recursion to solve this problem.
     func testChallenge1() {
-
+        var list = LinkedList(arrayLiteral: 1,2,3,4,5,6,7,8,9,10)
+        var stack = Stack<Int>()
+        
+        while let value = list.pop() {
+            stack.push(value)
+        }
+        
+        while !stack.isEmpty {
+            print(stack.pop())
+        }
     }
     
     // Challenge 2
