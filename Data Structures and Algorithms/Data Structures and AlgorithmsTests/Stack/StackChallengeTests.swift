@@ -22,8 +22,8 @@ class StackChallengeTests: XCTestCase {
             stack.push(value)
         }
         
-        while !stack.isEmpty {
-            print(stack.pop())
+        while let value = stack.pop() {
+            print(value)
         }
     }
     
@@ -42,6 +42,19 @@ class StackChallengeTests: XCTestCase {
 
 private extension StackChallengeTests {
     func isBalanced(_ string : String) -> Bool {
-        return true
+        var stack = Stack<Character>()
+        for character in string {
+            if character == ")" {
+                if stack.isEmpty {
+                    return false
+                } else {
+                    stack.pop()
+                }
+            } else if character == "(" {
+                stack.push(character)
+            }
+        }
+        
+        return stack.isEmpty
     }
 }
