@@ -17,6 +17,10 @@ public struct QueueArray<T>: Queue {
     
     public init() {}
     
+    public init(_ elements: [T]) {
+        elements.forEach({ enqueue($0) })
+    }
+    
     public mutating func enqueue(_ element: T) {
         storage.append(element)
     }
