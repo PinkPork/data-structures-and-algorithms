@@ -10,10 +10,11 @@ import Foundation
 
 public struct QueueArray<T>: Queue {
     public typealias Element = T
-    private var storage = ContiguousArray<T>()
+    private var storage = ContiguousArray<T?>()
     
     public var isEmpty: Bool { return storage.isEmpty }
-    public var front: T? { return storage.first }
+    public var front: T? { return storage.first ?? nil }
+    private var head: Int = 0
     
     public init() {}
     
@@ -24,6 +25,24 @@ public struct QueueArray<T>: Queue {
     @discardableResult
     public mutating func dequeue() -> T? {
         return isEmpty ? nil : storage.removeFirst()
+    }
+    
+    @discardableResult
+    public mutating func dequeueFast() -> T? {
+        guard head < storage.count, let value = storage[head] else {
+            return nil
+        }
+        
+        storage[head] = nil
+        head += 1
+        
+        let percentage = Double(head)/Double(storage.count)
+        if storage.count > 100 && percentage > 0.25 {
+            storage.removeFirst(head)
+            head = 0
+        }
+        
+        return value
     }
 }
 
