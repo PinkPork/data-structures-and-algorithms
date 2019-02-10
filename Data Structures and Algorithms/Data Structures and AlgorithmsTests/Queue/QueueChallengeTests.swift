@@ -46,7 +46,7 @@ class QueueChallengeTests: XCTestCase {
         
         XCTAssertFalse(queue.isEmpty)
         
-        XCTAssertEqual(player0, totalPlayers[0])
+        XCTAssertEqual(queue.nextPlayer(), totalPlayers[0])
     }
     
     func testChallenge4() {
