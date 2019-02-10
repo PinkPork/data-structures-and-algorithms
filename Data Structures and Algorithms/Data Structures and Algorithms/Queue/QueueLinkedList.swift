@@ -17,6 +17,10 @@ public struct QueueLinkedList<T>: Queue {
     
     public init() {}
     
+    public init(_ elements: [T]) {
+        elements.forEach({ enqueue($0) })
+    }
+    
     public mutating func enqueue(_ element: T) {
         list.append(element)
     }
@@ -30,5 +34,19 @@ public struct QueueLinkedList<T>: Queue {
 extension QueueLinkedList: CustomStringConvertible {
     public var description: String {
         return String(describing: list)
+    }
+}
+
+extension QueueLinkedList {
+    public mutating func reversed() -> QueueLinkedList {
+        var reversedQueueLinkedList = QueueLinkedList()
+        
+        while !list.isEmpty {
+            if let element = list.removeLast() {
+                reversedQueueLinkedList.enqueue(element)
+            }
+        }
+        
+        return reversedQueueLinkedList
     }
 }

@@ -36,3 +36,15 @@ extension QueueArray: CustomStringConvertible {
         return String(describing: storage)
     }
 }
+
+// MARK: - Challenge 4 method
+extension QueueArray {
+    public mutating func reversed() -> QueueArray {
+        var reversedQueue = QueueArray()
+        
+        while !self.isEmpty {
+            reversedQueue.enqueue(storage.removeLast())
+        }
+        return reversedQueue // return a copy of the reversed queue
+    }
+}

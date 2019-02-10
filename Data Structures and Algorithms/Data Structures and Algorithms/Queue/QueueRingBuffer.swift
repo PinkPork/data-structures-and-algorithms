@@ -18,6 +18,12 @@ public struct QueueRingBuffer<T>: Queue {
     public init(size: Int) {
         buffer = RingBuffer<T>(size: size)
     }
+    
+    public init(elements: [T], size: Int) {
+        buffer = RingBuffer<T>(size: size)
+        
+        elements.forEach({ enqueue($0) })
+    }
 
     public mutating func enqueue(_ element: T) {
         let didEnqueue = buffer.write(element)
@@ -36,5 +42,14 @@ public struct QueueRingBuffer<T>: Queue {
 extension QueueRingBuffer: CustomStringConvertible {
     public var description: String {
         return String(describing: buffer)
+    }
+}
+
+extension QueueRingBuffer {
+    public mutating func reversed(size: Int) -> QueueRingBuffer {
+        let bufferReversed = self.buffer.reversed()
+        let reversedQueueRingBuffer = QueueRingBuffer(elements: bufferReversed, size: size)
+        
+        return reversedQueueRingBuffer
     }
 }
