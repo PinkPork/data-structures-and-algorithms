@@ -25,6 +25,7 @@
 		02758BBC2207BE010033D8E5 /* RingBufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02758BBB2207BE010033D8E5 /* RingBufferTests.swift */; };
 		02758BBE2207EDA80033D8E5 /* QueueStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02758BBD2207EDA80033D8E5 /* QueueStack.swift */; };
 		02E34E4422047E7000A7B922 /* LinkedListChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E34E4322047E7000A7B922 /* LinkedListChallengeTests.swift */; };
+		6E79BAF7220F3BBF00432C97 /* QueueChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E79BAF6220F3BBF00432C97 /* QueueChallengeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		02758BBB2207BE010033D8E5 /* RingBufferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBufferTests.swift; sourceTree = "<group>"; };
 		02758BBD2207EDA80033D8E5 /* QueueStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueStack.swift; sourceTree = "<group>"; };
 		02E34E4322047E7000A7B922 /* LinkedListChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListChallengeTests.swift; sourceTree = "<group>"; };
+		6E79BAF6220F3BBF00432C97 /* QueueChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueChallengeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				02758BAF2207B2AB0033D8E5 /* QueueTests.swift */,
+				6E79BAF6220F3BBF00432C97 /* QueueChallengeTests.swift */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				02322658220343E900843E4A /* LinkedListTests.swift in Sources */,
 				0256384E20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift in Sources */,
 				02758BBC2207BE010033D8E5 /* RingBufferTests.swift in Sources */,
+				6E79BAF7220F3BBF00432C97 /* QueueChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

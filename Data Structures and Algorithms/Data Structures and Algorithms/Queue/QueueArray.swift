@@ -18,6 +18,10 @@ public struct QueueArray<T>: Queue {
     
     public init() {}
     
+    public init(_ elements: [T]) {
+        elements.forEach({ enqueue($0) })
+    }
+    
     public mutating func enqueue(_ element: T) {
         storage.append(element)
     }
@@ -49,5 +53,20 @@ public struct QueueArray<T>: Queue {
 extension QueueArray: CustomStringConvertible {
     public var description: String {
         return String(describing: storage)
+    }
+}
+
+// MARK: - Challenge 4 method
+extension QueueArray {
+    public mutating func reversed() -> QueueArray {
+        var copy = self
+        var reversedQueue = QueueArray()
+        
+        while !copy.isEmpty {
+            if let element = copy.storage.removeLast() {
+                reversedQueue.enqueue(element)
+            }
+        }
+        return reversedQueue // return a copy of the reversed queue
     }
 }

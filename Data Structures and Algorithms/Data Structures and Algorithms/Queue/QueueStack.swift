@@ -18,6 +18,10 @@ public struct QueueStack<T>: Queue {
     
     public init() {}
     
+    public init (_ elements: [T]) {
+        elements.forEach({ enqueue($0) })
+    }
+    
     public mutating func enqueue(_ element: T) {
         rightStack.push(element)
     }
@@ -41,5 +45,19 @@ extension QueueStack: CustomStringConvertible {
     public var description: String {
         let queue = leftStack.map { $0 } + rightStack.reversed()
         return String(describing: queue)
+    }
+}
+
+extension QueueStack {
+    public mutating func reversed() -> QueueStack {
+        var reversedQueueStack = QueueStack()
+        
+        if leftStack.isEmpty {
+            rightStack.forEach( { reversedQueueStack.enqueue($0) } )
+        } else {
+            rightStack.forEach( { reversedQueueStack.enqueue($0) } )
+            leftStack.forEach( { reversedQueueStack.enqueue($0) } )
+        }
+        return reversedQueueStack
     }
 }
