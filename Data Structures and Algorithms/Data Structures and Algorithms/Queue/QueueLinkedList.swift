@@ -39,10 +39,11 @@ extension QueueLinkedList: CustomStringConvertible {
 
 extension QueueLinkedList {
     public mutating func reversed() -> QueueLinkedList {
+        var copy = self
         var reversedQueueLinkedList = QueueLinkedList()
         
-        while !list.isEmpty {
-            if let element = list.removeLast() {
+        while !copy.list.isEmpty {
+            if let element = copy.list.removeLast() {
                 reversedQueueLinkedList.enqueue(element)
             }
         }
