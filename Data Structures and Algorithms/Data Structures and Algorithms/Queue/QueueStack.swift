@@ -52,8 +52,12 @@ extension QueueStack {
     public mutating func reversed() -> QueueStack {
         var reversedQueueStack = QueueStack()
         
-        rightStack.forEach( { reversedQueueStack.enqueue($0) } )
-        
+        if leftStack.isEmpty {
+            rightStack.forEach( { reversedQueueStack.enqueue($0) } )
+        } else {
+            rightStack.forEach( { reversedQueueStack.enqueue($0) } )
+            leftStack.forEach( { reversedQueueStack.enqueue($0) } )
+        }
         return reversedQueueStack
     }
 }
