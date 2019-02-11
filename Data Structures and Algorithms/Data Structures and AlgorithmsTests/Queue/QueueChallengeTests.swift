@@ -60,7 +60,7 @@ class QueueChallengeTests: XCTestCase {
     
     func testChallenge2QueueRingBuffer() {
         let elements = ["S", "W", "I", "F", "T"]
-        var queueRingBuffer = QueueRingBuffer(elements: elements, size: 10)
+        var queueRingBuffer = QueueRingBuffer(elements: elements, size: 5)
         
         queueRingBuffer.enqueue("R")
         queueRingBuffer.enqueue("O")
@@ -70,7 +70,7 @@ class QueueChallengeTests: XCTestCase {
         queueRingBuffer.dequeue()
         queueRingBuffer.enqueue("K")
         
-        let queueRingBufferExpectation = QueueRingBuffer(elements: ["F", "T", "R", "O", "C", "K"], size: 10)
+        let queueRingBufferExpectation = QueueRingBuffer(elements: ["F", "T", "C", "K"], size: 5)
         
         XCTAssertEqual(queueRingBuffer.description, queueRingBufferExpectation.description)
     }
@@ -184,7 +184,11 @@ extension QueueRingBuffer: BoardGameManager {
     typealias Player = T
     
     mutating func nextPlayer() -> Player? {
-        return dequeue()
+        guard let nextPlayer = dequeue() else {
+            return nil
+        }
+        enqueue(nextPlayer)
+        return nextPlayer
     }
 }
 

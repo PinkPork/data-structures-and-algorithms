@@ -26,11 +26,7 @@ public struct QueueRingBuffer<T>: Queue {
     }
 
     public mutating func enqueue(_ element: T) {
-        let didEnqueue = buffer.write(element)
-        
-        if !didEnqueue {
-            assertionFailure()
-        }
+        buffer.write(element)
     }
 
     @discardableResult
