@@ -59,10 +59,13 @@ extension QueueArray: CustomStringConvertible {
 // MARK: - Challenge 4 method
 extension QueueArray {
     public mutating func reversed() -> QueueArray {
+        var copy = self
         var reversedQueue = QueueArray()
         
-        while !self.isEmpty {
-            reversedQueue.enqueue(storage.removeLast())
+        while !copy.isEmpty {
+            if let element = copy.storage.removeLast() {
+                reversedQueue.enqueue(element)
+            }
         }
         return reversedQueue // return a copy of the reversed queue
     }
