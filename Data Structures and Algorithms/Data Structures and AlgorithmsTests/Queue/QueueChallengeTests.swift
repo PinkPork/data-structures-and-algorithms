@@ -95,14 +95,14 @@ class QueueChallengeTests: XCTestCase {
     func testChallenge3() {
         // Given
         let totalPlayers = ["Hugo", "Jaime", "Lucho", "Jose", "Santi"]
-        var queue = QueueRingBuffer<String>(elements: totalPlayers, size: totalPlayers.count)
+        var queueRingBuffer = QueueRingBuffer<String>(elements: totalPlayers, size: totalPlayers.count)
         
         // When
-        let player0 = queue.nextPlayer()
-        let player1 = queue.nextPlayer()
-        let player2 = queue.nextPlayer()
-        let player3 = queue.nextPlayer()
-        let player4 = queue.nextPlayer()
+        let player0 = queueRingBuffer.nextPlayer()
+        let player1 = queueRingBuffer.nextPlayer()
+        let player2 = queueRingBuffer.nextPlayer()
+        let player3 = queueRingBuffer.nextPlayer()
+        let player4 = queueRingBuffer.nextPlayer()
         
         // Then
         XCTAssertEqual(player0, totalPlayers[0])
@@ -111,7 +111,9 @@ class QueueChallengeTests: XCTestCase {
         XCTAssertEqual(player3, totalPlayers[3])
         XCTAssertEqual(player4, totalPlayers[4])
         
-        XCTAssertTrue(queue.isEmpty)
+        XCTAssertFalse(queueRingBuffer.isEmpty)
+        
+        XCTAssertEqual(queueRingBuffer.nextPlayer(), totalPlayers[0])
     }
     
     func testChallenge4QueueArray() {
@@ -173,7 +175,7 @@ class QueueChallengeTests: XCTestCase {
 }
 
 // MARK: - Challenge 3 dependencies
-fileprivate protocol BoardGameManager {
+protocol BoardGameManager {
     associatedtype Player
     mutating func nextPlayer() -> Player?
 }
@@ -185,3 +187,4 @@ extension QueueRingBuffer: BoardGameManager {
         return dequeue()
     }
 }
+
