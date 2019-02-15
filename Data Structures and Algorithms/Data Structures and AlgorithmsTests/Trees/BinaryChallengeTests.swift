@@ -19,7 +19,7 @@ extension BinaryNode {
     }
     
     func toArray() -> [Element?] {
-        return [nil]
+        return [value]
     }
 }
 
