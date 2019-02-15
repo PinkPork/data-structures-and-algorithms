@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020C2DEC22167F5D001E3F3C /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020C2DEB22167F5D001E3F3C /* BinarySearchTree.swift */; };
+		020C2DEE22167FCD001E3F3C /* BinarySearchTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020C2DED22167FCD001E3F3C /* BinarySearchTreeTests.swift */; };
+		020C2DF022168B1E001E3F3C /* BinarySearchTreeChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020C2DEF22168B1E001E3F3C /* BinarySearchTreeChallengeTests.swift */; };
 		0219B057220B859800D19B5B /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0219B056220B859800D19B5B /* TreeNode.swift */; };
 		0219B05A220B864700D19B5B /* TreeNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0219B059220B864700D19B5B /* TreeNodeTests.swift */; };
 		023226532203434C00843E4A /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023226522203434C00843E4A /* Node.swift */; };
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020C2DEB22167F5D001E3F3C /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
+		020C2DED22167FCD001E3F3C /* BinarySearchTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTreeTests.swift; sourceTree = "<group>"; };
+		020C2DEF22168B1E001E3F3C /* BinarySearchTreeChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTreeChallengeTests.swift; sourceTree = "<group>"; };
 		0219B056220B859800D19B5B /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		0219B059220B864700D19B5B /* TreeNodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeTests.swift; sourceTree = "<group>"; };
 		023226522203434C00843E4A /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 			children = (
 				0219B056220B859800D19B5B /* TreeNode.swift */,
 				02DAB2712210A68900BA15E5 /* BinaryNode.swift */,
+				020C2DEB22167F5D001E3F3C /* BinarySearchTree.swift */,
 			);
 			path = Trees;
 			sourceTree = "<group>";
@@ -107,6 +114,8 @@
 				0219B059220B864700D19B5B /* TreeNodeTests.swift */,
 				02DAB2732210A7D400BA15E5 /* BinaryNodeTests.swift */,
 				02DAB2752210CF8000BA15E5 /* BinaryChallengeTests.swift */,
+				020C2DED22167FCD001E3F3C /* BinarySearchTreeTests.swift */,
+				020C2DEF22168B1E001E3F3C /* BinarySearchTreeChallengeTests.swift */,
 			);
 			path = Trees;
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 				02758BAC2207B0420033D8E5 /* QueueArray.swift in Sources */,
 				02758BA32206910E0033D8E5 /* Stack.swift in Sources */,
 				02DAB2722210A68900BA15E5 /* BinaryNode.swift in Sources */,
+				020C2DEC22167F5D001E3F3C /* BinarySearchTree.swift in Sources */,
 				02758BB92207BD940033D8E5 /* RingBuffer.swift in Sources */,
 				023226532203434C00843E4A /* Node.swift in Sources */,
 				02758BAA2207AFE50033D8E5 /* Queue.swift in Sources */,
@@ -356,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				020C2DEE22167FCD001E3F3C /* BinarySearchTreeTests.swift in Sources */,
 				02758BA122068FB50033D8E5 /* StackTests.swift in Sources */,
 				02758BB02207B2AB0033D8E5 /* QueueTests.swift in Sources */,
 				02DAB2762210CF8000BA15E5 /* BinaryChallengeTests.swift in Sources */,
@@ -364,6 +375,7 @@
 				02758BA5220697AB0033D8E5 /* StackChallengeTests.swift in Sources */,
 				02322658220343E900843E4A /* LinkedListTests.swift in Sources */,
 				0256384E20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift in Sources */,
+				020C2DF022168B1E001E3F3C /* BinarySearchTreeChallengeTests.swift in Sources */,
 				02758BBC2207BE010033D8E5 /* RingBufferTests.swift in Sources */,
 				6E79BAF7220F3BBF00432C97 /* QueueChallengeTests.swift in Sources */,
 				0219B05A220B864700D19B5B /* TreeNodeTests.swift in Sources */,

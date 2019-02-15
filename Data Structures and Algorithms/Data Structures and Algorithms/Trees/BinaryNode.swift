@@ -13,6 +13,7 @@ public class BinaryNode<Element> {
     public var leftChild: BinaryNode?
     public var rightChild: BinaryNode?
     public var height: Int { return count(node: self) }
+    public var min: BinaryNode { return leftChild?.min ?? self }
     
     public init(_ value: Element) {
         self.value = value
