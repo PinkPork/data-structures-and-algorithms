@@ -8,12 +8,11 @@
 
 import Foundation
 
-public class TreeNode<T> {
-    public private(set) var value: T
+public final class TreeNode<T>: Node<T>  {
     public private(set) var children: [TreeNode] = []
     
     public init(_ value: T) {
-        self.value = value
+        super.init(value: value)
     }
     
     public func add(child: TreeNode) {

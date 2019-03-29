@@ -8,19 +8,17 @@
 
 import Foundation
 
-public class BinaryNode<Element> {
-    public var value: Element
+public class BinaryNode<Element>: Node<Element> {
     public var leftChild: BinaryNode?
     public var rightChild: BinaryNode?
     public var height: Int { return count(node: self) }
-    public var min: BinaryNode { return leftChild?.min ?? self }
     
     public init(_ value: Element) {
-        self.value = value
+        super.init(value: value)
     }
     
     public init(value: Element, left: Element, right: Element) {
-        self.value = value
+        super.init(value: value)
         self.leftChild = BinaryNode(left)
         self.rightChild = BinaryNode(right)
     }

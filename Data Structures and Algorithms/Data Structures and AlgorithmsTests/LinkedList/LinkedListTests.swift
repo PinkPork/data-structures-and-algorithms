@@ -250,7 +250,7 @@ class LinkedListTests: XCTestCase {
     
     func testIndexEquality() {
         // Given
-        let node = Node(value: 0)
+        let node = LinkedListNode(value: 0)
         let index = LinkedList<Int>.Index(node: node)
         
         // When
@@ -262,7 +262,7 @@ class LinkedListTests: XCTestCase {
     
     func testIndexComparableSameNode() {
         // Given
-        let node = Node(value: 0)
+        let node = LinkedListNode(value: 0)
         let index = LinkedList<Int>.Index(node: node)
         
         // When
@@ -274,11 +274,11 @@ class LinkedListTests: XCTestCase {
     
     func testIndexComparableNodeNotInList() {
         // Given
-        let node = Node(value: 0)
+        let node = LinkedListNode(value: 0)
         let index = LinkedList<Int>.Index(node: node)
         
         // When
-        let otherNode = Node(value: 1)
+        let otherNode = LinkedListNode(value: 1)
         let otherIndex = LinkedList<Int>.Index(node: otherNode)
         
         // Then

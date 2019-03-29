@@ -7,8 +7,8 @@
 //
 
 public struct LinkedList<Value> {
-    public var head: Node<Value>?
-    public var tail: Node<Value>?
+    public var head: LinkedListNode<Value>?
+    public var tail: LinkedListNode<Value>?
     public var count: Int = 0
     public var isEmpty: Bool { return head == nil }
     
@@ -20,7 +20,7 @@ public struct LinkedList<Value> {
     }
 
     public mutating func push(_ value: Value) {
-        let node = Node(value: value, next: head)
+        let node = LinkedListNode(value: value, next: head)
         
         head = node
         
@@ -39,14 +39,14 @@ public struct LinkedList<Value> {
             return
         }
         
-        let node = Node(value: value)
+        let node = LinkedListNode(value: value)
         
         tail.next = node
         self.tail = node
         count += 1
     }
     
-    public func node(at index: Int) -> Node<Value>? {
+    public func node(at index: Int) -> LinkedListNode<Value>? {
         var currentNode = head
         var currentIndex = 0
         
@@ -59,14 +59,14 @@ public struct LinkedList<Value> {
     }
     
     @discardableResult
-    public mutating func insert(_ value: Value, after node: Node<Value>) -> Node<Value> {
+    public mutating func insert(_ value: Value, after node: LinkedListNode<Value>) -> LinkedListNode<Value> {
         guard tail !== node else {
             append(value)
             return tail!
         }
         let newReferenceNode = copyNodes(referencedNode: node)
         let newNode = newReferenceNode ?? node
-        let insertedNode = Node(value: value, next: newNode.next)
+        let insertedNode = LinkedListNode(value: value, next: newNode.next)
         
         newNode.next = insertedNode
         count += 1
@@ -95,8 +95,8 @@ public struct LinkedList<Value> {
             return pop()
         }
         
-        var prev: Node<Value>?
-        var current: Node<Value>? = head
+        var prev: LinkedListNode<Value>?
+        var current: LinkedListNode<Value>? = head
         
         while current !== tail {
             prev = current
@@ -110,7 +110,7 @@ public struct LinkedList<Value> {
     }
     
     @discardableResult
-    public mutating func remove(after node: Node<Value>) -> Value? {
+    public mutating func remove(after node: LinkedListNode<Value>) -> Value? {
         defer {
             let newReferenceNode = copyNodes(referencedNode: node)
             let newNode = newReferenceNode ?? node
@@ -126,16 +126,16 @@ public struct LinkedList<Value> {
     }
     
     @discardableResult
-    private mutating func copyNodes(referencedNode: Node<Value>? = nil) -> Node<Value>? {
+    private mutating func copyNodes(referencedNode: LinkedListNode<Value>? = nil) -> LinkedListNode<Value>? {
         guard !isKnownUniquelyReferenced(&head),
             var oldNode = head else {
             return nil
         }
         
-        var copiedReferencedNode: Node<Value>?
-        var newNode: Node<Value>?
+        var copiedReferencedNode: LinkedListNode<Value>?
+        var newNode: LinkedListNode<Value>?
         
-        head = Node(value: oldNode.value)
+        head = LinkedListNode(value: oldNode.value)
         newNode = head
         
         if oldNode === referencedNode {
@@ -143,7 +143,7 @@ public struct LinkedList<Value> {
         }
         
         while let nextOldNode = oldNode.next {
-            newNode?.next = Node(value: nextOldNode.value)
+            newNode?.next = LinkedListNode(value: nextOldNode.value)
             newNode = newNode?.next
             oldNode = nextOldNode
             
@@ -181,9 +181,9 @@ extension LinkedList: ExpressibleByArrayLiteral {
 
 extension LinkedList: Collection {
     public struct Index: Comparable {
-        var node: Node<Value>?
+        var node: LinkedListNode<Value>?
         
-        public init(node: Node<Value>?) {
+        public init(node: LinkedListNode<Value>?) {
             self.node = node
         }
         

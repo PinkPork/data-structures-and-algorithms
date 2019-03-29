@@ -95,3 +95,7 @@ private extension BinarySearchTree {
         return node
     }
 }
+
+private extension BinaryNode {
+    var min: BinaryNode { return leftChild?.min ?? self }
+}

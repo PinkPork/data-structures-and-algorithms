@@ -34,8 +34,8 @@ extension LinkedList where Value: Comparable {
     static func mergeSortedList(lhs: LinkedList<Value>,
                                 rhs: LinkedList<Value>) -> LinkedList<Value> {
         var list = LinkedList<Value>()
-        var lhsNode: Node<Value>? = lhs.head
-        var rhsNode: Node<Value>? = rhs.head
+        var lhsNode: LinkedListNode<Value>? = lhs.head
+        var rhsNode: LinkedListNode<Value>? = rhs.head
         
         while lhsNode != nil || rhsNode != nil {
             switch (lhsNode?.value, rhsNode?.value) {
@@ -65,8 +65,8 @@ extension LinkedList where Value: Comparable {
 
 extension LinkedList where Value: Equatable {
     mutating func remove(value: Value) {
-        var prev: Node<Value>? = head
-        var current: Node<Value>? = head?.next
+        var prev: LinkedListNode<Value>? = head
+        var current: LinkedListNode<Value>? = head?.next
         
         while current != nil {
             if current?.value == value {

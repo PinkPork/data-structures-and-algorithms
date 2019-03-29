@@ -15,6 +15,11 @@
 		023226532203434C00843E4A /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023226522203434C00843E4A /* Node.swift */; };
 		023226552203438700843E4A /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023226542203438700843E4A /* LinkedList.swift */; };
 		02322658220343E900843E4A /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02322657220343E900843E4A /* LinkedListTests.swift */; };
+		0242B65D22357360008A8184 /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0242B65C22357360008A8184 /* AVLTree.swift */; };
+		0242B65F22357442008A8184 /* AVLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0242B65E22357442008A8184 /* AVLNode.swift */; };
+		0242B663223575EE008A8184 /* AVLNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0242B662223575EE008A8184 /* AVLNodeTests.swift */; };
+		0242B665223589BA008A8184 /* LinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0242B664223589BA008A8184 /* LinkedListNode.swift */; };
+		0242B6672235D645008A8184 /* AVLTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0242B6662235D645008A8184 /* AVLTreeTests.swift */; };
 		0256384920BEFE430070FF67 /* Data_Structures_and_Algorithms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0256383F20BEFE420070FF67 /* Data_Structures_and_Algorithms.framework */; };
 		0256384E20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256384D20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift */; };
 		0256385020BEFE430070FF67 /* Data_Structures_and_Algorithms.h in Headers */ = {isa = PBXBuildFile; fileRef = 0256384220BEFE420070FF67 /* Data_Structures_and_Algorithms.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,6 +60,11 @@
 		023226522203434C00843E4A /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		023226542203438700843E4A /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		02322657220343E900843E4A /* LinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
+		0242B65C22357360008A8184 /* AVLTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
+		0242B65E22357442008A8184 /* AVLNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLNode.swift; sourceTree = "<group>"; };
+		0242B662223575EE008A8184 /* AVLNodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLNodeTests.swift; sourceTree = "<group>"; };
+		0242B664223589BA008A8184 /* LinkedListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListNode.swift; sourceTree = "<group>"; };
+		0242B6662235D645008A8184 /* AVLTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTreeTests.swift; sourceTree = "<group>"; };
 		0256383F20BEFE420070FF67 /* Data_Structures_and_Algorithms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data_Structures_and_Algorithms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0256384220BEFE420070FF67 /* Data_Structures_and_Algorithms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data_Structures_and_Algorithms.h; sourceTree = "<group>"; };
 		0256384320BEFE420070FF67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,6 +114,7 @@
 				0219B056220B859800D19B5B /* TreeNode.swift */,
 				02DAB2712210A68900BA15E5 /* BinaryNode.swift */,
 				020C2DEB22167F5D001E3F3C /* BinarySearchTree.swift */,
+				0242B66022357480008A8184 /* AVL Tree */,
 			);
 			path = Trees;
 			sourceTree = "<group>";
@@ -111,6 +122,7 @@
 		0219B058220B863400D19B5B /* Trees */ = {
 			isa = PBXGroup;
 			children = (
+				0242B661223575CD008A8184 /* AVL Tree */,
 				0219B059220B864700D19B5B /* TreeNodeTests.swift */,
 				02DAB2732210A7D400BA15E5 /* BinaryNodeTests.swift */,
 				02DAB2752210CF8000BA15E5 /* BinaryChallengeTests.swift */,
@@ -123,8 +135,8 @@
 		0232264F2203430100843E4A /* LinkedList */ = {
 			isa = PBXGroup;
 			children = (
-				023226522203434C00843E4A /* Node.swift */,
 				023226542203438700843E4A /* LinkedList.swift */,
+				0242B664223589BA008A8184 /* LinkedListNode.swift */,
 			);
 			path = LinkedList;
 			sourceTree = "<group>";
@@ -136,6 +148,24 @@
 				02E34E4322047E7000A7B922 /* LinkedListChallengeTests.swift */,
 			);
 			path = LinkedList;
+			sourceTree = "<group>";
+		};
+		0242B66022357480008A8184 /* AVL Tree */ = {
+			isa = PBXGroup;
+			children = (
+				0242B65E22357442008A8184 /* AVLNode.swift */,
+				0242B65C22357360008A8184 /* AVLTree.swift */,
+			);
+			path = "AVL Tree";
+			sourceTree = "<group>";
+		};
+		0242B661223575CD008A8184 /* AVL Tree */ = {
+			isa = PBXGroup;
+			children = (
+				0242B662223575EE008A8184 /* AVLNodeTests.swift */,
+				0242B6662235D645008A8184 /* AVLTreeTests.swift */,
+			);
+			path = "AVL Tree";
 			sourceTree = "<group>";
 		};
 		0256383520BEFE420070FF67 = {
@@ -159,6 +189,7 @@
 		0256384120BEFE420070FF67 /* Data Structures and Algorithms */ = {
 			isa = PBXGroup;
 			children = (
+				023226522203434C00843E4A /* Node.swift */,
 				0219B055220B857E00D19B5B /* Trees */,
 				02758BB72207BD7E0033D8E5 /* RingBuffer */,
 				02758BA82207AFD30033D8E5 /* Queue */,
@@ -349,11 +380,14 @@
 			files = (
 				02758BB42207B4A70033D8E5 /* QueueLinkedList.swift in Sources */,
 				023226552203438700843E4A /* LinkedList.swift in Sources */,
+				0242B65D22357360008A8184 /* AVLTree.swift in Sources */,
 				02758BBE2207EDA80033D8E5 /* QueueStack.swift in Sources */,
 				0219B057220B859800D19B5B /* TreeNode.swift in Sources */,
+				0242B65F22357442008A8184 /* AVLNode.swift in Sources */,
 				02758BB62207B8B10033D8E5 /* QueueRingBuffer.swift in Sources */,
 				02758BAC2207B0420033D8E5 /* QueueArray.swift in Sources */,
 				02758BA32206910E0033D8E5 /* Stack.swift in Sources */,
+				0242B665223589BA008A8184 /* LinkedListNode.swift in Sources */,
 				02DAB2722210A68900BA15E5 /* BinaryNode.swift in Sources */,
 				020C2DEC22167F5D001E3F3C /* BinarySearchTree.swift in Sources */,
 				02758BB92207BD940033D8E5 /* RingBuffer.swift in Sources */,
@@ -368,6 +402,7 @@
 			files = (
 				020C2DEE22167FCD001E3F3C /* BinarySearchTreeTests.swift in Sources */,
 				02758BA122068FB50033D8E5 /* StackTests.swift in Sources */,
+				0242B6672235D645008A8184 /* AVLTreeTests.swift in Sources */,
 				02758BB02207B2AB0033D8E5 /* QueueTests.swift in Sources */,
 				02DAB2762210CF8000BA15E5 /* BinaryChallengeTests.swift in Sources */,
 				02E34E4422047E7000A7B922 /* LinkedListChallengeTests.swift in Sources */,
@@ -377,6 +412,7 @@
 				0256384E20BEFE430070FF67 /* Data_Structures_and_AlgorithmsTests.swift in Sources */,
 				020C2DF022168B1E001E3F3C /* BinarySearchTreeChallengeTests.swift in Sources */,
 				02758BBC2207BE010033D8E5 /* RingBufferTests.swift in Sources */,
+				0242B663223575EE008A8184 /* AVLNodeTests.swift in Sources */,
 				6E79BAF7220F3BBF00432C97 /* QueueChallengeTests.swift in Sources */,
 				0219B05A220B864700D19B5B /* TreeNodeTests.swift in Sources */,
 			);

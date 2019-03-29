@@ -1,22 +1,23 @@
 //
-//  Node.swift
+//  LinkedListNode.swift
 //  Data Structures and Algorithms
 //
-//  Created by Jaime Andres Laino Guerra on 1/31/19.
+//  Created by Jaime Andres Laino Guerra on 3/10/19.
 //  Copyright © 2019 Jaime Andres Laino Guerra. All rights reserved.
 //
 
-public final class Node<Value> {
-    public let value: Value
-    public var next: Node?
+import Foundation
+
+public final class LinkedListNode<Value>: Node<Value> {
+    public var next: LinkedListNode?
     
-    public init(value: Value, next: Node? = nil) {
-        self.value = value
+    public init(value: Value, next: LinkedListNode? = nil) {
+        super.init(value: value)
         self.next = next
     }
 }
 
-extension Node: CustomStringConvertible {
+extension LinkedListNode: CustomStringConvertible {
     public var description: String {
         guard let next = next else {
             return "\(value) -> nil"
