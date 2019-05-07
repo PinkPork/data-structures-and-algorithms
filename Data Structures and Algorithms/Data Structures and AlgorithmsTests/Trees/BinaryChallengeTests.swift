@@ -98,4 +98,51 @@ class BinaryChallengeTests: XCTestCase {
         XCTAssertEqual(tree.toArray(), array)
     }
 
+    // Challenge 3: Given the root of a binary search tree with distinct values,
+    // modify it so that every node has a new value equal to the sum of the values of the original tree that are greater than or equal to node.value.
+    // https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
+    func testGreaterSumTree() {
+        // Given
+        let tree = BinaryNode(value: 4,
+                              left: 1,
+                              right: 6)
+        tree.leftChild?.leftChild = BinaryNode(0)
+        tree.leftChild?.rightChild = BinaryNode(2)
+        tree.leftChild?.rightChild?.rightChild = BinaryNode(3)
+        tree.rightChild?.leftChild = BinaryNode(5)
+        tree.rightChild?.rightChild = BinaryNode(7)
+        tree.rightChild?.rightChild?.rightChild = BinaryNode(8)
+        
+        // When
+        var lastValue = 0
+        tree.traverseInReverseOrder { (node) in
+            node.value = node.value + lastValue
+            lastValue = node.value
+        }
+        
+        // Then
+        XCTAssertEqual(tree.description,
+                       """
+  ┌── 8
+ ┌── 15
+ │ └── nil
+┌── 21
+│ └── 26
+30
+│  ┌── 33
+│ ┌── 35
+│ │ └── nil
+└── 36
+ └── 36
+
+""")
+    }
+}
+
+extension BinaryNode {
+    public func traverseInReverseOrder(visit: (BinaryNode<Element>) -> Void) {
+        rightChild?.traverseInReverseOrder(visit: visit)
+        visit(self)
+        leftChild?.traverseInReverseOrder(visit: visit)
+    }
 }
