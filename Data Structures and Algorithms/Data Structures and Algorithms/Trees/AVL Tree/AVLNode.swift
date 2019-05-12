@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class AVLNode<Element>: Node<Element> {
+public final class AVLNode<Element>: Node<Element> {
     public enum BlanceFactor: Int {
         case leftChildHeavier = 2
         case rightChildHeavier = -2
@@ -21,7 +21,7 @@ public class AVLNode<Element>: Node<Element> {
     public var rightChild: AVLNode?
     public var leftHeight: Int { return leftChild?.height ?? -1 }
     public var rightHeight: Int { return rightChild?.height ?? -1 }
-    public var balanceFactor: BlanceFactor { return BlanceFactor(rawValue: leftHeight - rightHeight) ??  .balanced }
+    public var balanceFactor: BlanceFactor { return BlanceFactor(rawValue: leftHeight - rightHeight) ?? .balanced }
     public var min: AVLNode { return leftChild?.min ?? self }
     public var height: Int = 0
     
@@ -30,25 +30,6 @@ public class AVLNode<Element>: Node<Element> {
     }
 }
 
-extension AVLNode: CustomStringConvertible {
-    public var description: String {
-        return diagram(for: self)
-    }
-    
-    private func diagram(for node: AVLNode?,
-                         _ top: String = "",
-                         _ root: String = "",
-                         _ bottom: String = "") -> String {
-        guard let node = node else {
-            return root + "nil\n"
-        }
-        if node.leftChild == nil && node.rightChild == nil {
-            return root + "\(node.value)\n"
-        }
-        return diagram(for: node.rightChild,
-                       top + " ", top + "┌── ", top + "│ ")
-            + root + "\(node.value)\n"
-            + diagram(for: node.leftChild,
-                      bottom + "│ ", bottom + "└── ", bottom + " ")
-    }
-}
+extension AVLNode: DiagramableBinaryNode {}
+extension AVLNode: TraversableBinaryNode {}
+extension AVLNode: CustomStringConvertible {}

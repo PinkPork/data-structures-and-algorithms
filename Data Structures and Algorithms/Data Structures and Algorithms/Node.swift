@@ -6,7 +6,12 @@
 //  Copyright © 2019 Jaime Andres Laino Guerra. All rights reserved.
 //
 
-public class Node<Value> {
+public protocol NodeProtocol: class {
+    associatedtype Element
+    var value: Element { get }
+}
+
+public class Node<Value>: NodeProtocol {
     public var value: Value
     
     public init(value: Value) {
