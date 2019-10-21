@@ -42,6 +42,9 @@
 		02DAB2762210CF8000BA15E5 /* BinaryChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DAB2752210CF8000BA15E5 /* BinaryChallengeTests.swift */; };
 		02E34E4422047E7000A7B922 /* LinkedListChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E34E4322047E7000A7B922 /* LinkedListChallengeTests.swift */; };
 		6E79BAF7220F3BBF00432C97 /* QueueChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E79BAF6220F3BBF00432C97 /* QueueChallengeTests.swift */; };
+		C140A1BA235D154400ADFC92 /* TrieNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C140A1B9235D154400ADFC92 /* TrieNode.swift */; };
+		C140A1BC235D155A00ADFC92 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C140A1BB235D155A00ADFC92 /* Trie.swift */; };
+		C140A1BF235D15B100ADFC92 /* TrieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C140A1BE235D15B100ADFC92 /* TrieTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		02DAB2752210CF8000BA15E5 /* BinaryChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryChallengeTests.swift; sourceTree = "<group>"; };
 		02E34E4322047E7000A7B922 /* LinkedListChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListChallengeTests.swift; sourceTree = "<group>"; };
 		6E79BAF6220F3BBF00432C97 /* QueueChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueChallengeTests.swift; sourceTree = "<group>"; };
+		C140A1B9235D154400ADFC92 /* TrieNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrieNode.swift; sourceTree = "<group>"; };
+		C140A1BB235D155A00ADFC92 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
+		C140A1BE235D15B100ADFC92 /* TrieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrieTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 		0219B055220B857E00D19B5B /* Trees */ = {
 			isa = PBXGroup;
 			children = (
+				C140A1B8235D137D00ADFC92 /* Tries */,
 				0219B056220B859800D19B5B /* TreeNode.swift */,
 				02DAB2712210A68900BA15E5 /* BinaryNode.swift */,
 				027C5DD82288C57500606334 /* TraversableBinaryNode.swift */,
@@ -130,6 +137,7 @@
 		0219B058220B863400D19B5B /* Trees */ = {
 			isa = PBXGroup;
 			children = (
+				C140A1BD235D159000ADFC92 /* Tries */,
 				0242B661223575CD008A8184 /* AVL Tree */,
 				0219B059220B864700D19B5B /* TreeNodeTests.swift */,
 				02DAB2732210A7D400BA15E5 /* BinaryNodeTests.swift */,
@@ -278,6 +286,23 @@
 			path = RingBuffer;
 			sourceTree = "<group>";
 		};
+		C140A1B8235D137D00ADFC92 /* Tries */ = {
+			isa = PBXGroup;
+			children = (
+				C140A1B9235D154400ADFC92 /* TrieNode.swift */,
+				C140A1BB235D155A00ADFC92 /* Trie.swift */,
+			);
+			path = Tries;
+			sourceTree = "<group>";
+		};
+		C140A1BD235D159000ADFC92 /* Tries */ = {
+			isa = PBXGroup;
+			children = (
+				C140A1BE235D15B100ADFC92 /* TrieTests.swift */,
+			);
+			path = Tries;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -354,6 +379,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 0256383520BEFE420070FF67;
 			productRefGroup = 0256384020BEFE420070FF67 /* Products */;
@@ -389,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02758BB42207B4A70033D8E5 /* QueueLinkedList.swift in Sources */,
+				C140A1BA235D154400ADFC92 /* TrieNode.swift in Sources */,
 				023226552203438700843E4A /* LinkedList.swift in Sources */,
 				0242B65D22357360008A8184 /* AVLTree.swift in Sources */,
 				02758BBE2207EDA80033D8E5 /* QueueStack.swift in Sources */,
@@ -397,6 +424,7 @@
 				0242B65F22357442008A8184 /* AVLNode.swift in Sources */,
 				02758BB62207B8B10033D8E5 /* QueueRingBuffer.swift in Sources */,
 				02758BAC2207B0420033D8E5 /* QueueArray.swift in Sources */,
+				C140A1BC235D155A00ADFC92 /* Trie.swift in Sources */,
 				02758BA32206910E0033D8E5 /* Stack.swift in Sources */,
 				0242B665223589BA008A8184 /* LinkedListNode.swift in Sources */,
 				02DAB2722210A68900BA15E5 /* BinaryNode.swift in Sources */,
@@ -414,6 +442,7 @@
 			files = (
 				020C2DEE22167FCD001E3F3C /* BinarySearchTreeTests.swift in Sources */,
 				02758BA122068FB50033D8E5 /* StackTests.swift in Sources */,
+				C140A1BF235D15B100ADFC92 /* TrieTests.swift in Sources */,
 				0242B6672235D645008A8184 /* AVLTreeTests.swift in Sources */,
 				02758BB02207B2AB0033D8E5 /* QueueTests.swift in Sources */,
 				02DAB2762210CF8000BA15E5 /* BinaryChallengeTests.swift in Sources */,
